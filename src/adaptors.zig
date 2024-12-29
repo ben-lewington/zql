@@ -2,6 +2,7 @@
 /// The dialect is for writing a correct sql statement in a specfic architecture,
 /// and the executor for interacting with the database client
 pub const sqlite = @import("adaptors/sqlite.zig");
+pub const pgsql = @import("adaptors/pgsql.zig");
 
 const utils = @import("zql").utils;
 const Atom = utils.Atom;

@@ -1,8 +1,7 @@
 const std = @import("std");
 const zql = @import("zql");
 const utils = zql.utils;
-const adaptors = zql.adaptors;
-const sqlite = adaptors.sqlite;
+const sqlite = zql.adaptors.sqlite;
 
 const Foo = struct {
     id: usize,

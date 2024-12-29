@@ -77,14 +77,12 @@ pub fn makeZql(b: *std.Build, opts: anytype) *std.Build.Step.Compile {
         sqlite_dep.dep.addTo(sqlite_lib);
         lib.root_module.addImport(sqlite_dep.name, &sqlite_lib.root_module);
     }
-    if (arches.values.get(.pqsql)) {
+    if (arches.values.get(.pgsql)) {
         const postgres = b.dependency("libpq", .{
             .target = opts.target,
             .optimize = opts.optimize,
         });
         const libpq = postgres.artifact("pq");
-        //
-        // // wherever needed:
         lib.linkLibrary(libpq);
     }
 
@@ -125,7 +123,7 @@ pub fn build(b: *std.Build) !void {
 
 const SqlArch = enum {
     sqlite,
-    pqsql,
+    pgsql,
 
     const sqlarch = @typeInfo(SqlArch).Enum;
 

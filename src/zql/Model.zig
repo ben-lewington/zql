@@ -15,7 +15,6 @@ const log = std.log.scoped(.zql_model);
 name: []const u8 = "",
 table_name: []const u8,
 Table: type,
-ColumnOf: type,
 db_types: []const adaptors.Dialect.DbType,
 dialect: Dialect,
 

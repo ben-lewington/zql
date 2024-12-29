@@ -121,11 +121,8 @@ pub fn model(
         };
     };
 
-    const ColumnOf: type = std.meta.FieldEnum(table.Inner);
-
     return .{
         .Table = table.Inner,
-        .ColumnOf = ColumnOf,
         .db_types = &table.db_types,
         .table_name = @tagName(table_name),
         .dialect = dialect,

@@ -1,0 +1,15 @@
+name: "zql_test_dbs"
+version: '3.9'
+
+services:
+  postgres:
+    build:
+      context: postgres
+      dockerfile: Containerfile
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: Password1!
+      POSTGRES_DB: db
+    ports:
+      - 8432:5432
